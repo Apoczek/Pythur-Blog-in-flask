@@ -6,10 +6,10 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/home")
 def home():
-    return "<h1>Strona domowa</h1>"
+    return "<h1>Pythur blog</h1>"
 
 
-@app.route("about")
+@app.route("/about")
 def about():
     return "<h1>O mnie</h1>"
 
