@@ -6,7 +6,8 @@
     <meta name="description" content="Relacja z tworzenie moejej pierwszej strony, potencjalnego blogu" />
     <meta name="keywords" content="pierwsza, strona, próbna, pierwsza strona" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<link rel="stylesheet" href="styl.css" type="text/css" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" />
 	
 	<script type="text/javascript" src="timer.js"></script>
  
@@ -28,16 +29,11 @@
         </div>
 
         <div id="content">
-            <h2> Witaj przybyszu. </h2>
-            Nazywam się Artur Kosior, a Ty jesteś na moim pierwszym "programistycznym" tworze. <br />
-            W 2017 roku postanowiłem wprowadzić kilka dużych zmian w moim życiu.
-            Jedną z nich jest nauka programowania. <br />
-            Do tej pory byłem związany z branżą spożywczą. Jakość, HACCP i tego typu klimaty.
-            Jednak powiedziałem sobie w końcu "dość" i oto jest efekt mojej decyzji.
-            Z czasem strona będzie ewoluować tak bardzo jak bardzo będzie się powiększać moja wiedza o programowaniu.
-            Nauki jest dużo. Na początek wszedł Python jako język backendowy co prawdopodobnie będzie moją domeną.
-            Niemniej jednak na pewno dojdzie do tego HTTP, CSS i JS co w mikrostopniu widać tutaj. <br />
-            Miłego czytania i do zobaczenia już niedługo.
+            {% for post in posts %}
+                <h1>{{ post.title }}</h1>
+                <p>By {{ post.author }} on {{ post.date_posted }}</p>
+                <p>{{ post.content }}</p>
+            {% endfor %}
         </div>
 
         <div id="ad">
