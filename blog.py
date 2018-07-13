@@ -38,7 +38,7 @@ def home():
     return render_template('index.html', posts=posts)
 
 
-@app.route("/O autorze")
+@app.route("/O-autorze")
 def about():
     return render_template('about.html')
 
